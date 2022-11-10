@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        
         document.write("<h1> 1.가위 2.바위 3.보 게임</h1>");
 
         let me = prompt("1.가위 2.바위 3.보 중 선택하세요.(숫자)","");
@@ -14,6 +13,7 @@
 
         document.write("<img src='image/" + com +".jpg'>");
         document.write("<img src='image/" + me +".jpg'>");
+
 
         // com          me         결과
         // 가위1        가위1      tie          0
@@ -26,12 +26,15 @@
         // 보3          바위2      me lose      1
         // 보3          보3        tie          0 
 
-        if(com==me){
-            document.write("tie");
-        }else if((com==1 && me==2) || (com==2 && me==3) || (com==3 && me==1)){
+        let x = com-me;
+        if(x == -1 || x == 2){
             document.write("you win");
-        }else{
+        }else if(x==-2 || x == 1){
             document.write("you lose");
+        }else if(x==0){
+            document.write("tie")
+        }else{
+            document.write("숫자를 입력해주세요.");
         }
     </script>
 </head>
